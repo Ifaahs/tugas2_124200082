@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'tourismplace.dart';
+import 'booksdata.dart';
 
 class DetailPage extends StatefulWidget {
-  final TourismPlace place;
+  final BooksData place;
 
   const DetailPage({Key? key, required this.place}) : super(key: key);
 
@@ -18,7 +18,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Detail Wisata"),
+          title: Text("Detail Buku"),
         ),
         body: Container(
           padding: EdgeInsets.all(12),
@@ -47,9 +47,9 @@ class _DetailPageState extends State<DetailPage> {
                 ),
 
                 Text(
-                  "${widget.place.name}",
+                  "${widget.place.title}",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 24, color: Colors.blue),
+                  style: TextStyle(fontSize: 24, color: Colors.black),
                 ),
                 Text(
                   "${widget.place.description}",
@@ -58,25 +58,42 @@ class _DetailPageState extends State<DetailPage> {
                 ),
                 SizedBox(height: 24,),
                 Text(
-                  "Harga  : ${widget.place.ticketPrice}",
+                  "Id  : ${widget.place.id}",
                   textAlign: TextAlign.left,
-                  style: TextStyle(fontSize: 15, color: Colors.red),
+                  style: TextStyle(fontSize: 15, color: Colors.black),
                 ),
                 Text(
-                  "Lokasi : ${widget.place.location}",
+                  "Authors : ${widget.place.authors}",
                   textAlign: TextAlign.left,
                   style: TextStyle(fontSize: 15),
                 ),
                 Text(
-                  "Open Days  : ${widget.place.openDays}",
+                  "Publisher  : ${widget.place.publisher}",
                   textAlign: TextAlign.justify,
                   style: TextStyle(fontSize: 15),
                 ),
                 Text(
-                  "Open Time : ${widget.place.openTime}",
+                  "Published Date : ${widget.place.publishedDate}",
                   textAlign: TextAlign.justify,
                   style: TextStyle(fontSize: 15),
                 ),
+                Text(
+                  "Categories : ${widget.place.categories}",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 15),
+                ),
+                Text(
+                  "Image Link : ${widget.place.imageUrls}",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 15),
+                ),
+                Text(
+                  "Preview Link : ${widget.place.previewLink}",
+                  textAlign: TextAlign.justify,
+                  style: TextStyle(fontSize: 15),
+                ),
+
+
 
                 SizedBox(height: 24,),
 

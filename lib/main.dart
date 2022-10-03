@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     // Setelah diimport, panggil nama class tersebut
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const MainScreen(),
     );

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:praktugas2/tourismplace.dart';
+import 'package:praktugas2/booksdata.dart';
 
 import 'detailpage.dart';
 
@@ -16,14 +16,17 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Main Page Wisata Turis"),
+        title: Text("Main Page Books Data"),
       ),
-      body: ListView.builder(
+      body: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+        ),
         itemBuilder: (context, index) {
           // Instansiasi
           // dengan format
           // final namaClass namaVariabel = namaConstructor
-          final TourismPlace place = tourismPlaceList[index];
+          final BooksData place = booksData[index];
 
           // Inkwell mirip seperti button yang bisa diklik dan ada fungsinya
           // Bedanya adalah button hanyalah sebuah tombol
@@ -38,14 +41,15 @@ class _MainScreenState extends State<MainScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.network(place.imageUrls[0], width: 120,),
-                  Text(place.name,style: TextStyle(fontWeight: FontWeight.bold),),
-                  Text(place.ticketPrice)
+                  Text(place.title,style: TextStyle(fontWeight: FontWeight.bold),),
+                  Text(place.authors[0]),
+                  Text(place.publishedDate),
                 ],
               ),
             ),
           );
         },
-        itemCount: tourismPlaceList.length,
+        itemCount: booksData.length,
       ),
     );
   }
